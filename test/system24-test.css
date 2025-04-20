@@ -1,21 +1,24 @@
 /**
- * @name midnight (rosé pine)
- * @description a dark, customizable discord theme. based on rosé pine theme (https://rosepinetheme.com).
+ * @name midnight
+ * @description a dark, customizable discord theme.
  * @author refact0r
  * @version 2.0.1
  * @invite nz87hXyvcy
  * @website https://github.com/refact0r/midnight-discord
- * @source https://github.com/refact0r/midnight-discord/blob/master/themes/flavors/midnight-rose-pine.theme.css
+ * @source https://github.com/refact0r/midnight-discord/blob/master/themes/midnight.theme.css
  * @authorId 508863359777505290
  * @authorLink https://www.refact0r.dev
 */
 
 /* import theme modules */
 @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
 body {
     /* font, change to '' for default discord font */
-    --font: 'figtree';
+    --font: 'DM Mono';
+    font-weight: 300;
+    letter-spacing: -0.05ch;
 
     /* sizes */
     --gap: 12px; /* spacing between panels */
@@ -35,15 +38,15 @@ body {
     --window-control-size: 14px; /* size of custom window controls */
 
     /* dms button icon options */
-    --dms-icon: off; /* set to default to use discord icon, on to use custom icon, off to disable completely */
+    --dms-icon: default; /* set to default to use discord icon, on to use custom icon, off to disable completely */
     --dms-icon-svg-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg'); /* icon svg url. MUST BE A SVG. */
     --dms-icon-svg-size: 90%; /* size of the svg (css mask-size) */
     --dms-icon-color-before: var(--icon-secondary); /* normal icon color */
     --dms-icon-color-after: var(--white); /* icon color when button is hovered/selected */
 
     /* dms button background options */
-    --dms-background: image; /* off to disable, image to use a background image, color to use a custom color/gradient */
-    --dms-background-image-url: url('https://raw.githubusercontent.com/rose-pine/rose-pine-theme/main/assets/icon.png'); /* url of the background image */
+    --dms-background: off; /* off to disable, image to use a background image, color to use a custom color/gradient */
+    --dms-background-image-url: url(''); /* url of the background image */
     --dms-background-image-size: cover; /* size of the background image (css background-size) */
     --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2)); /* fixed color/gradient (css background) */
 
@@ -73,29 +76,29 @@ body {
     --colors: on; /* turn off to use discord default colors */
 
     /* text colors */
-    --text-0: var(--bg-3); /* text on colored elements */
-    --text-1: hsl(245deg, 50%, 95%); /* other normally white text */
-    --text-2: hsl(245deg, 50%, 91%); /* headings and important text */
-    --text-3: hsl(246deg, 30%, 80%); /* normal text */
-    --text-4: hsl(248deg, 15%, 61%); /* icon buttons and channels */
-    --text-5: hsl(249deg, 12%, 47%); /* muted channels/chats and timestamps */
+    --text-0: var(--bg-4); /* text on colored elements */
+    --text-1: oklch(95% 0 0); /* other normally white text */
+    --text-2: oklch(85% 0 0); /* headings and important text */
+    --text-3: oklch(75% 0 0); /* normal text */
+    --text-4: oklch(60% 0 0); /* icon buttons and channels */
+    --text-5: oklch(40% 0 0); /* muted channels/chats and timestamps */
 
     /* background and dark colors */
-    --bg-1: hsl(248deg, 25%, 24%); /* dark buttons when clicked */
-    --bg-2: hsl(248deg, 25%, 18%); /* dark buttons */
-    --bg-3: hsl(247deg, 23%, 15%); /* spacing, secondary elements */
-    --bg-4: hsl(249deg, 22%, 12%); /* main background color */
-    --hover: hsla(250, 20%, 40%, 0.1); /* channels and buttons when hovered */
-    --active: hsla(250, 20%, 40%, 0.2); /* channels and buttons when clicked or selected */
-    --active-2: hsla(250, 20%, 40%, 0.3); /* extra state for transparent buttons */
-    --message-hover: hsla(250, 0%, 0%, 0.1); /* messages when hovered */
+    --bg-1: oklch(31% 0 0); /* dark buttons when clicked */
+    --bg-2: oklch(27% 0 0); /* dark buttons */
+    --bg-3: oklch(23% 0 0); /* spacing, secondary elements */
+    --bg-4: oklch(19% 0 0); /* main background color */
+    --hover: oklch(54% 0 0 / 0.1); /* channels and buttons when hovered */
+    --active: oklch(54% 0 0 / 0.2); /* channels and buttons when clicked or selected */
+    --active-2: oklch(54% 0 0 / 0.3); /* extra state for transparent buttons */
+    --message-hover: var(--hover); /* messages when hovered */
 
     /* accent colors */
-    --accent-1: hsl(2, 65%, 88%); /* links and other accent text */
-    --accent-2: #ebbcba; /* small accent elements */
-    --accent-3: #ebbcba; /* accent buttons */
-    --accent-4: hsl(2, 55%, 78%); /* accent buttons when hovered */
-    --accent-5: hsl(2, 55%, 73%); /* accent buttons when clicked */
+    --accent-1: var(--purple-1); /* links and other accent text */
+    --accent-2: var(--purple-2); /* small accent elements */
+    --accent-3: var(--purple-3); /* accent buttons */
+    --accent-4: var(--purple-4); /* accent buttons when hovered */
+    --accent-5: var(--purple-5); /* accent buttons when clicked */
     --accent-new: var(--red-2); /* stuff that's normally red like mute/deafen buttons */
     --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent); /* background of messages that mention you */
     --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent); /* background of messages that mention you when hovered */
@@ -110,38 +113,50 @@ body {
     --offline: var(--text-4); /* change to #83838b for default offline color */
 
     /* border colors */
-    --border-light: var(--hover); /* light border color */
-    --border: var(--active); /* normal border color */
-    --button-border: hsl(250, 0%, 100%, 0.1); /* neutral border color of buttons */
+    --border-light: var(--bg-1); /* light border color */
+    --border: var(--bg-1); /* normal border color */
+    --button-border: var(--hover); /* neutral border color of buttons */
 
     /* base colors */
-    --red-1: hsl(343, 76%, 73%);
-    --red-2: #eb6f92;
-    --red-3: #eb6f92;
-    --red-4: hsl(343, 76%, 63%);
-    --red-5: hsl(343, 76%, 58%);
+    --red-1: oklch(76% 0.12 0);
+    --red-2: oklch(70% 0.12 0);
+    --red-3: oklch(64% 0.12 0);
+    --red-4: oklch(58% 0.12 0);
+    --red-5: oklch(52% 0.12 0);
 
-    --green-1: hsl(197, 49%, 43%);
-    --green-2: #31748f;
-    --green-3: #31748f;
-    --green-4: hsl(197, 49%, 34%);
-    --green-5: hsl(197, 49%, 30%);
+    --green-1: oklch(76% 0.11 170);
+    --green-2: oklch(70% 0.11 170);
+    --green-3: oklch(64% 0.11 170);
+    --green-4: oklch(58% 0.11 170);
+    --green-5: oklch(52% 0.11 160);
 
-    --blue-1: hsl(189, 48%, 78%);
-    --blue-2: #9ccfd8;
-    --blue-3: #9ccfd8;
-    --blue-4: hsl(189, 43%, 68%);
-    --blue-5: hsl(189, 43%, 63%);
+    --blue-1: oklch(76% 0.1 215);
+    --blue-2: oklch(70% 0.1 215);
+    --blue-3: oklch(64% 0.1 215);
+    --blue-4: oklch(58% 0.1 215);
+    --blue-5: oklch(52% 0.1 215);
 
-    --yellow-1: hsl(35, 88%, 77%);
-    --yellow-2: #f6c177;
-    --yellow-3: #f6c177;
-    --yellow-4: hsl(35, 88%, 67%);
-    --yellow-5: hsl(35, 88%, 62%);
+    --yellow-1: oklch(80% 0.11 90);
+    --yellow-2: oklch(74% 0.11 90);
+    --yellow-3: oklch(68% 0.11 90);
+    --yellow-4: oklch(62% 0.11 90);
+    --yellow-5: oklch(56% 0.11 90);
 
-    --purple-1: hsl(267, 57%, 83%);
-    --purple-2: #c4a7e7;
-    --purple-3: #c4a7e7;
-    --purple-4: hsl(267, 57%, 73%);
-    --purple-5: hsl(267, 57%, 68%);
+    --purple-1: oklch(76% 0.11 310);
+    --purple-2: oklch(70% 0.11 310);
+    --purple-3: oklch(64% 0.11 310);
+    --purple-4: oklch(58% 0.11 310);
+    --purple-5: oklch(52% 0.11 310);
+}
+
+*,
+*::before,
+*::after {
+    border-radius: 0 !important;
+}
+
+.visual-refresh {
+    .bg__960e4 {
+        background: var(--bg-base-primary);
+    }
 }
