@@ -101,23 +101,34 @@ body {
         {
             display: none;
         }
+        .recentsIcon_c99c29 {
+            margin-right: var(--space-xs);
+        }
         .trailing_c38106 {
             position: absolute;
             top: calc(var(--gap) + 8px + var(--border-thickness));
             right: var(--gap);
-            z-index: 10000;
-            gap: var(--space-xs);
+            gap: 0;
+            z-index: 1000;
+            padding-right: var(--space-xs);
+        }
+        .systemBar_c38106 .trailing_c38106 {
+            top: var(--gap);
         }
         .winButtons_c38106 {
-            padding-right: var(--space-xs);
+            padding: 0;
         }
         .winButtons_c38106::before {
             height: 16px;
             width: var(--space-xs);
+            box-sizing: border-box;
             margin: 0;
         }
         .toolbar__9293f {
-            padding-right: calc(32px + 3 * var(--space-xs) + 6 * var(--window-control-size));
+            padding-right: calc(32px + 2 * var(--space-xs));
+        }
+        .searchBar__1ac1c {
+            margin-right: calc(32px + 2 * var(--space-xs));
         }
         .inviteToolbar__133bf {
             padding-right: 0;
@@ -125,6 +136,15 @@ body {
         .base_c48ade:has(.notice__6e2b9) > .bar_c38106 > .trailing_c38106 {
             top: calc(var(--gap) + 8px + 40px + var(--gap) + var(--border-thickness));
         }
+        .chat_f75fb0 > .layerContainer_da8173 {
+            z-index: 999;
+        }
+    }
+    .base_c48ade:has(.winButtons_c38106) .toolbar__9293f {
+        padding-right: calc(32px + 3 * var(--space-xs) + 6 * var(--window-control-size));
+    }
+    .base_c48ade:has(.winButtons_c38106) .searchBar__1ac1c {
+        margin-right: calc(32px + 3 * var(--space-xs) + 6 * var(--window-control-size));
     }
 }
 

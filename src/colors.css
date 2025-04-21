@@ -337,7 +337,6 @@
         }
 
         .panel__5dec7 /* game activity panel */,
-        #vc-spotify-player /* vencord spotify plugin */,
         .container__722ff /* background between vc and vc chat */ {
             background: none;
         }
@@ -621,6 +620,9 @@
 
         #vc-spotify-player {
             --vc-spotify-green: var(--accent-2);
+        }
+        .barFill_a562c8 {
+            background-color: var(--accent-2) !important;
         }
 
         .vcd-screen-picker-option-radio[data-checked='true'] .defaultColor__4bd52 {
