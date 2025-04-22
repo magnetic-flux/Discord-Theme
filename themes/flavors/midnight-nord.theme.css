@@ -2,7 +2,7 @@
  * @name midnight (nord)
  * @description a dark, customizable discord theme. based on nord theme (https://nordtheme.com).
  * @author refact0r
- * @version 2.1.0
+ * @version 2.1.1
  * @invite nz87hXyvcy
  * @website https://github.com/refact0r/midnight-discord
  * @source https://github.com/refact0r/midnight-discord/blob/master/themes/flavors/midnight-nord.theme.css
@@ -15,7 +15,8 @@
 
 body {
     /* font, change to '' for default discord font */
-    --font: 'figtree';
+    --font: 'figtree'; /* change to '' for default discord font */
+    --code-font: ''; /* change to '' for default discord font */
     font-weight: 400 /* normal text font weight. DOES NOT AFFECT BOLD TEXT */;
 
     /* sizes */
@@ -27,10 +28,11 @@ body {
     --animations: on; /* off: disable animations/transitions, on: enable animations/transitions */
     --list-item-transition: 0.2s ease; /* transition for list items */
     --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
+    --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
 
     /* top bar options */
-    --top-bar-height: 32px; /* height of the titlebar/top bar (discord default is 36px, 24px recommended if moving/hiding top bar buttons) */
-    --top-bar-button-position: titlebar; /* off: default position, hide: hide inbox/support buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to titlebar (will hide title) */
+    --top-bar-height: var(--gap); /* height of the top bar (discord default is 36px, old discord style is 24px, var(--gap) recommended if button position is set to titlebar) */
+    --top-bar-button-position: titlebar; /* off: default position, hide: hide buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to channel titlebar (will hide title) */
     --top-bar-title-position: off; /* off: default centered position, hide: hide title completely, left: left align title (like old discord) */
     --subtle-top-bar-title: off; /* off: default, on: hide the icon and use subtle text color (like old discord) */
 
@@ -112,8 +114,9 @@ body {
     --offline: var(--text-4); /* change to #83838b for default offline color */
 
     /* border colors */
-    --border-light: hsla(220, 20%, 50%, 0.05); /* light border color */
-    --border: hsla(220, 20%, 50%, 0.1); /* normal border color */
+    --border-light: hsla(220, 20%, 50%, 0.05); /* general light border color */
+    --border: hsla(220, 20%, 50%, 0.1); /* general normal border color */
+    --border-hover: hsla(220, 20%, 50%, 0.1); /* border color of panels when hovered */
     --button-border: hsl(0, 0%, 100%, 0.1); /* neutral border color of buttons */
 
     /* base colors */

@@ -5,6 +5,8 @@
     container-name: root;
     --custom-guild-list-padding: 12px;
     --panel-backdrop-filter: none;
+
+    --border-hover: var(--border-subtle);
 }
 
 body {
@@ -12,12 +14,15 @@ body {
 
     /* font, change to '' for default discord font */
     --font: 'figtree';
+    --code-font: '';
 
     /* sizes */
     --gap: 12px; /* spacing between panels */
     --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
     --border-thickness: 1px; /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
     --custom-guild-list-width: calc(var(--guildbar-avatar-size) + var(--custom-guild-list-padding) * 2 + var(--border-thickness) * 2);
+
+    --border-hover-transition: 0.2s ease;
 }
 
 .visual-refresh {
@@ -56,6 +61,11 @@ body {
         border: var(--border-thickness) solid var(--border-subtle);
         backdrop-filter: var(--panel-backdrop-filter);
         box-sizing: border-box;
+        transition: border-color var(--border-hover-transition);
+
+        &:hover {
+            border-color: var(--border-hover);
+        }
     }
 
     .panels_c48ade /* user panel */ {
@@ -236,6 +246,7 @@ body {
         margin: 0 var(--gap) var(--gap) 0;
         border-radius: var(--radius-md);
         box-sizing: border-box;
+        height: 40px;
     }
 
     .container__01ae2 /* vc chat + titlebar group */ {
@@ -425,6 +436,7 @@ body {
 body {
     --font-primary: var(--font), 'gg sans';
     --font-display: var(--font), 'gg sans';
+    --font-code: var(--code-font), 'gg mono';
 }
 
 [class*='scroll'] {
@@ -581,6 +593,11 @@ body {
             border-radius: var(--radius-lg);
             border: var(--border-thickness) solid var(--border-subtle);
             backdrop-filter: var(--panel-backdrop-filter);
+            transition: border-color var(--border-hover-transition);
+
+            &:hover {
+                border-color: var(--border-hover);
+            }
         }
         .scrollerSpacer__36d07 {
             height: calc(26px + var(--space-xs));
@@ -588,7 +605,7 @@ body {
         .scroller__36d07::-webkit-scrollbar-track {
             margin-bottom: calc(26px);
         }
-        .chatContent_f75fb0:has(.typing_b88801) .messagesWrapper__36d07::after {
+        .chatContent_f75fb0:has(.typing_b88801) .messagesWrapper__36d07::before {
             content: '';
             position: absolute;
             bottom: 0;
@@ -597,7 +614,7 @@ body {
             background: var(--background-base-lower);
             height: 26px;
             border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-            z-index: 1;
+            z-index: 2;
         }
         .form_f75fb0 {
             display: flex;
@@ -624,6 +641,11 @@ body {
             border-radius: var(--radius-lg);
             border: var(--border-thickness) solid var(--border-subtle);
             backdrop-filter: var(--panel-backdrop-filter);
+            transition: border-color var(--border-hover-transition);
+
+            &:hover {
+                border-color: var(--border-hover);
+            }
         }
         .stackedBars__74017 {
             background: none !important;
@@ -1445,9 +1467,6 @@ body {
 
 @container body style(--top-bar-button-position: titlebar) {
     .visual-refresh {
-        #app-mount {
-            --custom-app-top-bar-height: var(--gap);
-        }
         .title_c38106, 
         .trailing_c38106 > a[href="https://support.discord.com"]
         {
@@ -1458,14 +1477,14 @@ body {
         }
         .trailing_c38106 {
             position: absolute;
-            top: calc(var(--gap) + 8px + var(--border-thickness));
+            top: calc(var(--top-bar-height) + 8px + var(--border-thickness));
             right: var(--gap);
             gap: 0;
             z-index: 1000;
             padding-right: var(--space-xs);
         }
         .systemBar_c38106 .trailing_c38106 {
-            top: var(--gap);
+            top: var(--space-xs);
         }
         .winButtons_c38106 {
             padding: 0;
@@ -1486,7 +1505,7 @@ body {
             padding-right: 0;
         }
         .base_c48ade:has(.notice__6e2b9) > .bar_c38106 > .trailing_c38106 {
-            top: calc(var(--gap) + 8px + 40px + var(--gap) + var(--border-thickness));
+            top: calc(var(--top-bar-height) + 8px + 40px + var(--gap) + var(--border-thickness));
         }
         .chat_f75fb0 > .layerContainer_da8173 {
             z-index: 999;
